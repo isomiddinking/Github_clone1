@@ -1,5 +1,6 @@
 // src/components/ProfileSidebar/ProfileSidebar.jsx
 import React from 'react';
+import myImg from '../../assets/myImage.png'
 import './Right.css';
 
 const ProfileSidebar = () => {
@@ -7,7 +8,7 @@ const ProfileSidebar = () => {
     <aside className="profile-sidebar" data-aos="fade-right">
       <div className="profile-card">
         <div className="avatar-wrapper">
-          <img src="/src/assets/myImage.png" alt="Isomiddin" className="profile-avatar" />
+          <img src={myImg} alt="Isomiddin" className="profile-avatar" />
           <span className="status-indicator"></span>
         </div>
         <h2>Isomiddin Xakimjanov</h2>

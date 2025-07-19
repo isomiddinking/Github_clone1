@@ -4,6 +4,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { RiGitRepositoryCommitsLine } from 'react-icons/ri';
 import ProfileSidebar from '../Right/Right';
+import myActive2025 from '../..//assets/MyActive.png'
+import myActive2024 from '../..//assets/MyActive24.png'
+import myActive2023 from '../..//assets/MyActive23.png'
+
 
 const Sidebar = () => {
   const [activeYear, setActiveYear] = useState('2025');
@@ -139,20 +143,20 @@ const Sidebar = () => {
 
             {activeYear === '2025' && (
               <div className="img_active img_active25" data-aos="fade-up">
-                <img src="/src/assets/MyActive.png" alt="2025 Contributions" />
+                <img src={myActive2025} alt="2025 Contributions" />
               </div>
             )}
 
             {activeYear === '2024' && (
               <div className="img_active img_active24" data-aos="fade-up">
-                <img src="/src/assets/MyActive24.png" alt="2024 Contributions" />
+                <img src={myActive2024} alt="2024 Contributions" />
               </div>
             )}
 
             {activeYear === '2023' && (
               <div className="img_active img_active23" data-aos="fade-up">
                 {/* You'll need to create MyActive23.png in your assets folder */}
-                <img src="/src/assets/MyActive2023.png" alt="2023 Contributions" />
+                <img src={myActive2023} alt="2023 Contributions" />
               </div>
             )}
           </div>

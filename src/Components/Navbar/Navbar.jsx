@@ -11,6 +11,7 @@ import { IoBookOutline } from "react-icons/io5"
 import { GoRepo, GoPackage } from "react-icons/go"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import myImg from '../../assets/myImage.png'
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false)
@@ -44,7 +45,7 @@ const Navbar = () => {
           <div className="issues"><span><VscIssues /></span></div>
           <div className="request_box"><span><FaCodePullRequest /></span></div>
           <div className="right_img">
-            <img src="/src/assets/myImage.png" alt="profile" />
+            <img src={myImg} alt="profile" />
           </div>
         </div>
       </div>
