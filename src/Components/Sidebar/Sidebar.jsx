@@ -4,9 +4,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { RiGitRepositoryCommitsLine } from 'react-icons/ri';
 import ProfileSidebar from '../Right/Right';
-import myActive2025 from '../..//assets/MyActive.png'
-import myActive2024 from '../..//assets/MyActive24.png'
-import myActive2023 from '../..//assets/MyActive23.png'
+import myActive2025 from '../../assets/MyActive.png'
+import myActive2024 from '../../assets/MyActive24.png'
+import myActive2023 from '../../assets/MyActive2023.png'
 
 
 const Sidebar = () => {
