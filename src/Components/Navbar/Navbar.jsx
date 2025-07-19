@@ -20,6 +20,11 @@ const Navbar = () => {
     AOS.init({ duration: 800 })
   }, [])
 
+  // Link bosilganda menyuni yopish
+  const handleLinkClick = () => {
+    setShowMenu(false)
+  }
+
   return (
     <div className='header' data-aos="fade-down">
       <div className="header_container">
@@ -38,9 +43,7 @@ const Navbar = () => {
             <FaSearch className='search' />
             <input type="search" placeholder='Type / to search' />
           </div>
-          <div className="capilot">
-            <span className="icon_capilot"><TbBrandGithubCopilot /></span>
-          </div>
+          <div className="capilot"><span className="icon_capilot"><TbBrandGithubCopilot /></span></div>
           <div className="new_repo_box"><span><FaPlus /></span></div>
           <div className="issues"><span><VscIssues /></span></div>
           <div className="request_box"><span><FaCodePullRequest /></span></div>
@@ -51,19 +54,19 @@ const Navbar = () => {
       </div>
 
       <div className={`choices ${showMenu ? 'show' : ''}`} data-aos="fade-up">
-        <Link to="/sidebar" className="oveview">
+        <Link to="/sidebar" className="oveview" onClick={handleLinkClick}>
           <span><IoBookOutline /></span><h3>Overview</h3>
         </Link>
-        <Link to="/repositories" className="oveview"> 
+        <Link to="/repositories" className="oveview" onClick={handleLinkClick}>
           <span><GoRepo /></span><h3>Repositories <span className="number">4</span></h3>
         </Link>
-        <Link to="/projects" className="oveview">
+        <Link to="/projects" className="oveview" onClick={handleLinkClick}>
           <span><VscGithubProject /></span><h3>Projects</h3>
         </Link>
-        <Link to="/packages" className="oveview">
+        <Link to="/packages" className="oveview" onClick={handleLinkClick}>
           <span><GoPackage /></span><h3>Packages</h3>
         </Link>
-        <Link to="/stars" className="oveview">
+        <Link to="/stars" className="oveview" onClick={handleLinkClick}>
           <span><FaRegStar /></span><h3>Stars</h3>
         </Link>
       </div>
