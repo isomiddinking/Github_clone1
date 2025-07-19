@@ -1,0 +1,142 @@
+/* Repositories.css */
+
+/* Umumiy konteyner: Sidebar va repo'lar yonma-yon */
+.repositories-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 2rem;
+}
+
+/* Sidebar chapda qattiq width bilan */
+.profile-sidebar {
+  width: 280px;
+  position: relative;
+  top: -50;
+  left: 0;
+  padding-top: 50px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: transparent; /* sizda umumiy fonda rang bor bo‘lsa, bu joyda background-color yozmang */
+}
+
+/* Repositoriyalarning grid dizayni */
+.repo-grid1 {
+  flex: 1;
+  display: grid;
+  gap: 20px;
+}
+
+/* Har bir repository kartasi */
+.repo-card {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.repo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-color: #58a6ff;
+}
+
+.repo-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #58a6ff;
+}
+
+.visibility {
+  font-size: 0.8rem;
+  background-color: #21262d;
+  color: #8b949e;
+  border: 1px solid #30363d;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.repo-description {
+  font-size: 0.95rem;
+  color: #c9d1d9;
+  margin-bottom: 1rem;
+  min-height: 50px;
+}
+
+.repo-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Rangli til nuqtalari */
+.language-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Har bir tilga mos rang */
+.language-color.css {
+  background-color: #563d7c;
+}
+
+.language-color.javascript {
+  background-color: #f1e05a;
+}
+
+.language-color.html {
+  background-color: #e34c26;
+}
+
+.language-name {
+  color: #8b949e;
+}
+
+/* Responsive holatlar */
+@media (max-width: 1024px) {
+  .repositories-container {
+    flex-direction: column;
+    padding: 1rem;
+    margin: auto;
+  }
+
+  .profile-sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 20px 0;
+  }
+
+  .repo-grid1 {
+    padding: 0;
+    margin: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .repo-title {
+    font-size: 1rem;
+  }
+
+  .repo-description {
+    font-size: 0.85rem;
+  }
+
+  .repo-card {
+    padding: 1rem;
+  }
+}

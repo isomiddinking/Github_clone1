@@ -1,0 +1,111 @@
+.Pacages {
+  display: flex;
+  gap: 20px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.Pacages_container {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
+}
+
+.topic {
+    text-align: center;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+  transition: all 0.3s ease;
+}
+
+.topic span {
+  font-size: 40px;
+  color: #6e40c9;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.topic h2 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.topic p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.choose h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.girds {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.grid_cards {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid ;
+    transition: all 0.3s ease-in-out;
+}
+
+.grid_cards:hover {
+  transform: translateY(-5px);
+}
+
+.tops {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tops span {
+  font-size: 26px;
+  color: #4a90e2;
+}
+
+.tops h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.grid_cards p {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.grid_cards button {
+  background-color: #2ea44f;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.grid_cards button:hover {
+  background-color: #22863a;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .Pacages {
+    flex-direction: column;
+  }
+}

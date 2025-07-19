@@ -1,0 +1,385 @@
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* LAYOUT */
+.github-clone-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: 50px auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* PINNED SECTION */
+.pinned-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pinned-header h3 {
+  font-size: 18px;
+}
+
+.customize-link {
+  color: #58a6ff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.customize-link:hover {
+  text-decoration: underline;
+}
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.repo-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 16px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s;
+}
+
+.repo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.repo-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #58a6ff;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.visibility {
+  border: 1px solid #30363d;
+  border-radius: 20px;
+  padding: 2px 8px;
+  font-size: 12px;
+  color: #8b949e;
+}
+
+.repo-description {
+  font-size: 14px;
+  color: #8b949e;
+  margin-bottom: 12px;
+}
+
+.repo-meta {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.language-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.language-color.css {
+  background-color: #563d7c;
+}
+.language-color.javascript {
+  background-color: #f1e05a;
+}
+.language-color.html {
+  background-color: #e34c26;
+}
+
+/* CONTRIBUTION OVERVIEW */
+.active {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.active .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.active p{
+    color: white;
+    cursor: pointer;
+}
+
+.active p:hover{
+    color: rgb(67, 67, 240);
+    transition-duration: 0.5s;
+    text-decoration: underline;
+}
+
+.active button{
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(0, 179, 255);
+    color: white;
+    cursor: pointer;
+}
+
+.img_active{
+  background-color: #161b22;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+  padding: 5px;
+}
+
+.img_active img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.img_active24{
+  display: none;
+}
+
+.btn_boxs{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  width: 100%;
+  flex-direction: column;
+  margin-left: 120px;
+  position: relative;
+  top: 200px;
+  gap: 20px;
+}
+
+/* CONTRIBUTION ACTIVITY */
+.contribution-activity-container {
+  background-color: #161b22;
+  color: #c9d1d9;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+  margin-top: 40px;
+}
+
+.month-selector {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #21262d;
+  padding-bottom: 10px;
+}
+
+.activity-section {
+  border-left: 2px solid #30363d;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.activity-section::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #30363d;
+  border: 2px solid #0d1117;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.activity-header .icons,
+.activity-header .settings-icons {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #444c56;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.repository-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.repository-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  background-color: #0d1117;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.repository-item:hover {
+  background-color: #1f252c;
+}
+
+.repo-link {
+  color: #58a6ff;
+  font-weight: 500;
+  margin-right: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.commit-count, .language-name, .date {
+  font-size: 13px;
+  color: #8b949e;
+  margin-right: 8px;
+}
+
+.commit-bar {
+  height: 8px;
+  background-color: #238636;
+  border-radius: 4px;
+  flex-grow: 1;
+}
+
+.language-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.show-more-button {
+  background-color: #21262d;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.show-more-button:hover {
+  background-color: #30363d;
+  border-color: #58a6ff;
+}
+
+.guidance-text {
+  font-size: 12px;
+  color: #8b949e;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.guidance-text a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.guidance-text a:hover {
+  text-decoration: underline;
+}
+
+/* Yangi: Active toggle tugma */
+.btn_boxs button.active-btn {
+  background-color: #005b99;
+  border: 2px solid #58a6ff;
+}
+
+/* .img_active class avvalgi qolgani – umumiy stil */
+.img_active {
+  background-color: #161b22;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+  padding: 5px;
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+.img_active img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Animatsiya: chiqish uchun */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Oldingi .img_active24 va .img_active25 display:none bo'lishi endi kerak emas */
+.img_active24, .img_active25 {
+  display: block;
+}
+
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .github-clone-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .sidebar {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .profile-card {
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+  .btn_boxs{
+       position: static;
+       top: 0px;
+        margin-left: 0px;
+        order: 2;
+        display: flex;
+        flex-direction:row;
+      margin-bottom: 20px;
+  }
+}

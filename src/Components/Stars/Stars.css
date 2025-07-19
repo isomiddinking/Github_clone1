@@ -1,0 +1,114 @@
+.Stars {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.Stars_container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.start_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.right_top {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.right_top button {
+  padding: 6px 14px;
+  background-color: rgb(0, 255, 115);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.right_top button:hover {
+  background-color: rgb(0, 200, 90);
+}
+
+.star_card {
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.star_icon {
+  font-size: 40px;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.star_card h2 {
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.star_card p {
+  font-size: 16px;
+  color: #555;
+}
+
+.star_card p span {
+  color: rgb(68, 68, 251);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.star_card p span:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .Stars {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .start_top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .right_top {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .right_top button {
+    width: 100%;
+  }
+
+  .star_card {
+    padding: 1.5rem 1rem;
+  }
+
+  .star_card h2 {
+    font-size: 20px;
+  }
+
+  .star_icon {
+    font-size: 36px;
+  }
+}
