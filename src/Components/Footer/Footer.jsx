@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './footer.css';
+import './Footer.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaGithub } from "react-icons/fa";
