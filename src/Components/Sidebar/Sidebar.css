@@ -1,10 +1,10 @@
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   background-color: #0d1117;
   color: #c9d1d9;
   line-height: 1.6;
   overflow-x: hidden;
+  margin: 0; /* Ensure no default body margin */
 }
 
 /* LAYOUT */
@@ -20,7 +20,7 @@ body {
 /* MAIN CONTENT */
 .main-content {
   flex: 1;
-  min-width: 300px;
+  min-width: 300px; /* Ensures content isn't too narrow */
 }
 
 /* PINNED SECTION */
@@ -28,6 +28,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 16px; /* Add some space below header */
 }
 
 .pinned-header h3 {
@@ -38,6 +39,7 @@ body {
   color: #58a6ff;
   font-size: 14px;
   cursor: pointer;
+  white-space: nowrap; /* Prevent wrapping for smaller screens */
 }
 
 .customize-link:hover {
@@ -65,7 +67,7 @@ body {
 
 .repo-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .repo-title {
@@ -75,6 +77,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
+  flex-wrap: wrap; /* Allow title to wrap if needed */
 }
 
 .visibility {
@@ -83,6 +86,8 @@ body {
   padding: 2px 8px;
   font-size: 12px;
   color: #8b949e;
+  margin-left: 8px; /* Space between title and visibility */
+  white-space: nowrap;
 }
 
 .repo-description {
@@ -124,37 +129,65 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
   margin-bottom: 16px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allow elements to wrap */
 }
 
-.active p{
-    color: white;
-    cursor: pointer;
+.active h2 {
+  font-size: 20px;
+  margin: 0; /* Remove default margin */
 }
 
-.active p:hover{
-    color: rgb(67, 67, 240);
-    transition-duration: 0.5s;
-    text-decoration: underline;
+.active p {
+  color: white;
+  cursor: pointer;
+  white-space: nowrap; /* Prevent wrapping */
+  margin: 0; /* Remove default margin */
 }
 
-.active button{
-    width: 80px;
-    height: 30px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(0, 179, 255);
-    color: white;
-    cursor: pointer;
+.active p:hover {
+  color: rgb(67, 67, 240);
+  transition-duration: 0.5s;
+  text-decoration: underline;
 }
 
-.img_active{
+.btn_boxs {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px; /* Smaller gap for compactness */
+  margin-left: 0; /* Reset margin for smaller screens */
+  position: static; /* Reset position for responsiveness */
+  top: auto; /* Reset top for responsiveness */
+  margin-bottom: 20px; /* Space below buttons */
+}
+
+.btn_boxs button {
+  width: 70px; /* Slightly smaller buttons */
+  height: 30px;
+  border: 1px solid #30363d; /* Add a subtle border */
+  border-radius: 5px;
+  background-color: #21262d; /* Match general GitHub aesthetic */
+  color: #c9d1d9;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn_boxs button:hover {
+  background-color: #30363d;
+}
+
+.btn_boxs button.active-btn {
+  background-color: #005b99;
+  border-color: #58a6ff;
+}
+
+.img_active {
   background-color: #161b22;
   border-radius: 8px;
   border: 1px solid #30363d;
   padding: 5px;
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease;
 }
 
 .img_active img {
@@ -162,22 +195,6 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
-}
-
-.img_active24{
-  display: none;
-}
-
-.btn_boxs{
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  width: 100%;
-  flex-direction: column;
-  margin-left: 120px;
-  position: relative;
-  top: 200px;
-  gap: 20px;
 }
 
 /* CONTRIBUTION ACTIVITY */
@@ -220,6 +237,12 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+.activity-header h3 {
+  font-size: 16px; /* Adjust font size for smaller screens */
+  margin-right: 10px; /* Space between text and icon */
 }
 
 .activity-header .icons,
@@ -232,6 +255,7 @@ body {
   background-color: #444c56;
   border-radius: 3px;
   cursor: pointer;
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .repository-list {
@@ -247,6 +271,7 @@ body {
   background-color: #0d1117;
   border-radius: 6px;
   transition: background-color 0.2s;
+  flex-wrap: wrap; /* Allow items to wrap */
 }
 
 .repository-item:hover {
@@ -261,12 +286,17 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex-basis: 60%; /* Give more space to repo link */
+  min-width: 150px; /* Ensure a minimum width */
 }
 
-.commit-count, .language-name, .date {
+.commit-count,
+.language-name,
+.date {
   font-size: 13px;
   color: #8b949e;
   margin-right: 8px;
+  white-space: nowrap; /* Prevent wrapping */
 }
 
 .commit-bar {
@@ -274,6 +304,7 @@ body {
   background-color: #238636;
   border-radius: 4px;
   flex-grow: 1;
+  min-width: 50px; /* Ensure bar is visible */
 }
 
 .language-indicator {
@@ -281,6 +312,7 @@ body {
   height: 10px;
   border-radius: 50%;
   margin-right: 5px;
+  flex-shrink: 0;
 }
 
 .show-more-button {
@@ -315,71 +347,219 @@ body {
   text-decoration: underline;
 }
 
-/* Yangi: Active toggle tugma */
-.btn_boxs button.active-btn {
-  background-color: #005b99;
-  border: 2px solid #58a6ff;
-}
-
-/* .img_active class avvalgi qolgani – umumiy stil */
-.img_active {
-  background-color: #161b22;
-  border-radius: 8px;
-  border: 1px solid #30363d;
-  padding: 5px;
-  margin-top: 20px;
-  animation: fadeIn 0.5s ease;
-}
-
-.img_active img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
 /* Animatsiya: chiqish uchun */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
-  } to {
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Oldingi .img_active24 va .img_active25 display:none bo'lishi endi kerak emas */
-.img_active24, .img_active25 {
-  display: block;
-}
-
-
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width: 1024px) {
   .github-clone-container {
     flex-direction: column;
-    padding: 10px;
+    padding: 15px; /* Slightly more padding */
+    margin-top: 20px; /* Reduce top margin */
   }
 
   .sidebar {
+    /* Assuming ProfileSidebar is imported as a separate component and handles its own responsiveness */
     flex: 1 1 100%;
     max-width: 100%;
   }
 
-  .profile-card {
-    margin-bottom: 20px;
-  }
-
   .main-content {
     width: 100%;
+    min-width: unset; /* Allow it to shrink on very small screens */
   }
-  .btn_boxs{
-       position: static;
-       top: 0px;
-        margin-left: 0px;
-        order: 2;
-        display: flex;
-        flex-direction:row;
-      margin-bottom: 20px;
+
+  .repo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min-width for smaller screens */
   }
+
+  /* Adjustments for .active section */
+  .active {
+    padding: 15px; /* Smaller padding */
+    margin-top: 30px; /* Adjust margin */
+  }
+
+  .active .top {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align text to the left */
+    gap: 10px; /* Space between stacked items */
+  }
+
+  .active h2 {
+    font-size: 18px; /* Slightly smaller font for headings */
+    text-align: center; /* Center align for better look on small screens */
+    width: 100%;
+  }
+
+  .active p {
+    text-align: center; /* Center align for better look on small screens */
+    width: 100%;
+  }
+
+  .btn_boxs {
+    flex-direction: row; /* Keep buttons in a row */
+    justify-content: center; /* Center buttons */
+    margin-bottom: 20px;
+    margin-top: 15px; /* Add some space above buttons */
+    position: static;
+    top: auto;
+    width: 100%; /* Take full width */
+    order: 2; /* Place them below the contribution text in the flow if needed */
+  }
+
+  .btn_boxs button {
+    width: 80px; /* Keep them a reasonable size */
+  }
+
+  /* Contribution activity section adjustments */
+  .contribution-activity-container {
+    padding: 15px; /* Smaller padding */
+    margin-top: 30px;
+  }
+
+  .activity-header {
+    flex-direction: column; /* Stack header elements */
+    align-items: flex-start;
+    gap: 8px; /* Space between stacked items */
+  }
+
+  .activity-header h3 {
+    font-size: 15px; /* Smaller font size */
+    text-align: left;
+  }
+
+  .repository-item {
+    flex-direction: column; /* Stack repo details vertically */
+    align-items: flex-start;
+    gap: 5px; /* Space between stacked items */
+    padding: 10px;
+  }
+
+  .repo-link {
+    white-space: normal; /* Allow text to wrap */
+    overflow: visible; /* Don't hide overflow */
+    text-overflow: clip; /* Don't show ellipsis */
+    width: 100%; /* Take full width */
+    margin-right: 0; /* Remove right margin */
+  }
+
+  .commit-count,
+  .language-name,
+  .date {
+    width: 100%; /* Take full width when stacked */
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .commit-bar {
+    width: 100%; /* Make bar full width */
+    flex-grow: unset; /* Remove flex-grow when stacked */
+    min-width: unset;
+  }
+
+  .language-indicator {
+    display: none; /* Hide for very small screens if space is tight */
+  }
+}
+
+/* Media query for screens even smaller, e.g., 250px to 480px */
+@media (max-width: 480px) {
+  .github-clone-container {
+    padding: 10px;
+  }
+
+  .repo-grid {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+  }
+
+  .repo-card {
+    padding: 12px; /* Slightly less padding */
+  }
+
+  .repo-title {
+    font-size: 15px;
+    flex-direction: column; /* Stack title and visibility */
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .visibility {
+    margin-left: 0;
+  }
+
+  .active {
+    padding: 10px;
+  }
+
+  .active h2 {
+    font-size: 16px;
+  }
+
+  .btn_boxs button {
+    width: 70px; /* Make buttons slightly smaller */
+    font-size: 13px; /* Smaller text */
+  }
+
+  .contribution-activity-container {
+    padding: 10px;
+  }
+
+  .activity-section {
+    padding-left: 15px; /* Reduce left padding */
+  }
+
+  .activity-section::before {
+    left: -7px; /* Adjust position */
+    width: 10px;
+    height: 10px;
+  }
+
+  .activity-header h3 {
+    font-size: 14px;
+  }
+
+  .repository-item {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .repo-link, .commit-count, .language-name, .date {
+    font-size: 12px;
+  }
+
+  .show-more-button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .guidance-text {
+    font-size: 11px;
+  }
+}
+
+/* Even smaller screens (e.g., phones in landscape) */
+@media (max-width: 320px) {
+  .btn_boxs {
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    justify-content: center;
+  }
+  .btn_boxs button {
+    width: 60px; /* Even smaller buttons */
+    font-size: 12px;
+  }
+}
+
+/* Hide the unused display: none for specific active images,
+   as the React logic handles which image is shown */
+.img_active24, .img_active25, .img_active23 {
+  display: block; /* The JS will conditionally render them */
 }

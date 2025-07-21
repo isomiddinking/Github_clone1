@@ -18,7 +18,7 @@ body{
   justify-content: space-between;
   align-items: center;
   padding: 12px 30px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 /* Left side */
@@ -26,14 +26,15 @@ body{
   display: flex;
   align-items: center;
   gap: 20px;
+  /* On mobile, this will span full width and justify content between */
 }
 
 .menu_box {
+  display: none; /* Hide by default on desktop */
   width: 40px;
   height: 40px;
   border: 2px solid white;
   border-radius: 6px;
-  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 22px;
@@ -57,9 +58,9 @@ body{
   font-size: 30px;
 }
 
-/* Right side */
+/* Right side - Desktop default */
 .right_box_navbar {
-  display: flex;
+  display: flex; /* Always display on desktop */
   align-items: center;
   gap: 15px;
   flex-wrap: wrap;
@@ -123,12 +124,13 @@ body{
   object-fit: cover;
 }
 
-/* Choices section */
+/* Choices section - Desktop default */
 .choices {
-  display: flex;
+  display: flex; /* Always display on desktop */
   gap: 40px;
-  padding: 10px;
+  padding: 10px 30px; /* Adjusted padding to match header_container */
   align-items: center;
+  border-top: 1px solid #555; /* Add a border to separate from main header */
 }
 
 .oveview {
@@ -165,24 +167,49 @@ body{
 }
 
 @media (max-width: 768px) {
-  .right_box_navbar,
-  .choices {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #111;
-    padding: 10px 20px;
-    animation: slideDown 0.4s ease forwards;
-  }
-
-  .right_box_navbar.show,
-  .choices.show {
-    display: flex;
+  .menu_box {
+    display: flex; /* Show menu icon on mobile */
   }
 
   .left_box_navbar {
     width: 100%;
     justify-content: space-between;
+  }
+
+  .right_box_navbar,
+  .choices {
+    display: none; /* Hide by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    background-color: #111;
+    padding: 10px 20px;
+    animation: slideDown 0.4s ease forwards;
+    border-top: none; /* Remove border when it's a dropdown */
+  }
+
+  .right_box_navbar.show,
+  .choices.show {
+    display: flex; /* Show when 'show' class is applied */
+  }
+
+  /* Adjustments for elements within the hidden sections on mobile */
+  .search_box {
+    width: 100%; /* Make search box full width */
+    margin-bottom: 10px; /* Add some spacing */
+  }
+
+  .capilot,
+  .new_repo_box,
+  .issues,
+  .request_box {
+    width: 100%; /* Make icon buttons full width */
+    justify-content: flex-start; /* Align content to start */
+    padding-left: 10px; /* Add padding */
+    margin-bottom: 5px;
+  }
+
+  .right_img {
+    margin-top: 10px; /* Add space for the profile image */
   }
 
   .right_img img {
@@ -199,6 +226,9 @@ body{
     padding: 8px 0;
     border-bottom: 1px solid #222;
   }
+  .oveview:last-child {
+      border-bottom: none; /* No border for the last item */
+  }
 }
 
 /* Menu animation */
@@ -206,9 +236,11 @@ body{
   from {
     transform: scaleY(0);
     opacity: 0;
+    transform-origin: top; /* Animate from the top */
   }
   to {
     transform: scaleY(1);
     opacity: 1;
+    transform-origin: top;
   }
 }

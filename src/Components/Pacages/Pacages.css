@@ -1,28 +1,40 @@
+/* Pacages.css */
+
+/* Umumiy konteyner */
 .Pacages {
   display: flex;
   gap: 20px;
   padding: 40px 20px;
   flex-wrap: wrap;
+  max-width: 1280px; /* Consistent max-width with other components */
+  margin: 50px auto; /* Center the container */
+  background-color: #0d1117; /* Ensure background matches theme */
+  color: #c9d1d9; /* Default text color */
 }
 
+/* Har bir paket konteyneri (main content area) */
 .Pacages_container {
   flex: 1;
-  min-width: 280px;
+  min-width: 280px; /* Minimum width before wrapping */
   padding: 20px;
 }
 
+/* Yuqori qismdagi "Topic" bloki */
 .topic {
-    text-align: center;
+  text-align: center;
   padding: 25px;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   margin-bottom: 40px;
   transition: all 0.3s ease;
+  background-color: #161b22; /* GitHub-like dark background */
+  color: #c9d1d9; /* Text color for theme */
+  border: 1px solid #30363d; /* Subtle border */
 }
 
 .topic span {
   font-size: 40px;
-  color: #6e40c9;
+  color: #6e40c9; /* GitHub's purple for icons */
   display: inline-block;
   margin-bottom: 10px;
 }
@@ -31,37 +43,45 @@
   font-size: 26px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #c9d1d9; /* Ensure heading is visible on dark background */
 }
 
 .topic p {
   font-size: 16px;
-  color: #555;
+  color: #8b949e; /* Lighter text for descriptions */
   line-height: 1.6;
 }
 
+/* "Choose a registry" sarlavhasi */
 .choose h2 {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 20px;
   text-align: center;
+  color: #c9d1d9; /* Heading color for theme */
 }
 
+/* Grid layout for cards */
 .girds {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for better initial fit */
   gap: 20px;
 }
 
+/* Har bir grid kartasi */
 .grid_cards {
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  border: 1px solid ;
-    transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #30363d; /* Border for cards */
+  transition: all 0.3s ease-in-out;
+  background-color: #0d1117; /* Card background color */
+  color: #c9d1d9; /* Card text color */
 }
 
 .grid_cards:hover {
   transform: translateY(-5px);
+  border-color: #58a6ff; /* Highlight border on hover */
 }
 
 .tops {
@@ -73,23 +93,24 @@
 
 .tops span {
   font-size: 26px;
-  color: #4a90e2;
+  color: #4a90e2; /* Icon color */
 }
 
 .tops h3 {
   font-size: 20px;
   font-weight: 600;
+  color: #c9d1d9; /* Heading color */
 }
 
 .grid_cards p {
   font-size: 15px;
-  color: #666;
+  color: #8b949e; /* Description text color */
   margin-bottom: 15px;
   line-height: 1.5;
 }
 
 .grid_cards button {
-  background-color: #2ea44f;
+  background-color: #2ea44f; /* Green button background */
   color: white;
   padding: 8px 16px;
   border: none;
@@ -100,12 +121,205 @@
 }
 
 .grid_cards button:hover {
-  background-color: #22863a;
+  background-color: #22863a; /* Darker green on hover */
 }
 
-/* RESPONSIVE */
+/*
+---
+RESPONSIVE DESIGN STARTS HERE
+---
+*/
+
+/* 1024px va undan kichik ekranlar uchun */
+@media (max-width: 1024px) {
+  .Pacages {
+    flex-direction: column; /* Stack sidebar and main content vertically */
+    padding: 30px 15px; /* Kichikroq padding */
+    margin: 20px auto; /* Adjust margin for smaller screens */
+    gap: 15px; /* Consistent gap */
+  }
+
+  /* Assuming ProfileSidebar is handled by its own CSS for responsiveness */
+  .profile-sidebar {
+    width: 100%; /* Take full width */
+    position: static; /* Remove fixed positioning */
+    padding-top: 0; /* No need for top padding here */
+    height: auto; /* Auto height */
+  }
+
+  .Pacages_container {
+    padding: 15px; /* Kichikroq padding */
+    width: 100%; /* Ensure container takes full width */
+  }
+
+  .topic {
+    padding: 20px; /* Kichikroq padding */
+    margin-bottom: 30px; /* Kamroq margin */
+  }
+
+  .topic span {
+    font-size: 36px; /* Kichikroq icon */
+  }
+
+  .topic h2 {
+    font-size: 24px; /* Kichikroq sarlavha */
+  }
+
+  .topic p {
+    font-size: 15px; /* Kichikroq matn */
+  }
+
+  .girds {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Min-widthni kamaytirish */
+    gap: 15px; /* Kamroq gap */
+  }
+
+  .grid_cards {
+    padding: 15px; /* Kichikroq card padding */
+  }
+
+  .tops span {
+    font-size: 24px; /* Kichikroq icon */
+  }
+
+  .tops h3 {
+    font-size: 18px; /* Kichikroq sarlavha */
+  }
+
+  .grid_cards p {
+    font-size: 14px; /* Kichikroq matn */
+  }
+}
+
+/* 768px va undan kichik ekranlar uchun */
 @media (max-width: 768px) {
   .Pacages {
-    flex-direction: column;
+    padding: 20px 10px; /* Yana kamroq padding */
+    gap: 10px; /* Kamroq gap */
+  }
+
+  .Pacages_container {
+    padding: 10px;
+  }
+
+  .topic {
+    margin-bottom: 25px; /* Yana kamroq margin */
+    padding: 15px;
+  }
+
+  .topic h2 {
+    font-size: 22px;
+  }
+
+  .topic p {
+    font-size: 14px;
+  }
+
+  .girds {
+    grid-template-columns: 1fr; /* Yagona ustun */
+    gap: 15px;
+  }
+
+  .grid_cards {
+    padding: 15px;
+  }
+
+  .tops h3 {
+    font-size: 18px;
+  }
+
+  .grid_cards p {
+    font-size: 14px;
+  }
+}
+
+/* 480px va undan kichik ekranlar uchun */
+@media (max-width: 480px) {
+  .Pacages {
+    padding: 15px 5px; /* Mobil ekranlar uchun eng kam padding */
+    gap: 10px;
+  }
+
+  .Pacages_container {
+    padding: 5px; /* Eng kam padding */
+  }
+
+  .topic {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .topic span {
+    font-size: 32px; /* Yana kichikroq icon */
+  }
+
+  .topic h2 {
+    font-size: 20px; /* Yana kichikroq sarlavha */
+  }
+
+  .topic p {
+    font-size: 13px; /* Yana kichikroq matn */
+  }
+
+  .girds {
+    gap: 10px;
+  }
+
+  .grid_cards {
+    padding: 10px; /* Eng kam card padding */
+  }
+
+  .tops span {
+    font-size: 22px; /* Yana kichikroq icon */
+  }
+
+  .tops h3 {
+    font-size: 16px; /* Yana kichikroq sarlavha */
+  }
+
+  .grid_cards p {
+    font-size: 13px; /* Yana kichikroq matn */
+    margin-bottom: 10px;
+  }
+
+  .grid_cards button {
+    padding: 7px 14px; /* Kichikroq tugma */
+    font-size: 13px;
+  }
+}
+
+/* 320px va undan kichik ekranlar (eng kichik mobil) */
+@media (max-width: 320px) {
+  .Pacages {
+    padding: 10px 0px; /* Chekka paddingni deyarli olib tashlash */
+  }
+
+  .topic span {
+    font-size: 28px;
+  }
+
+  .topic h2 {
+    font-size: 18px;
+  }
+
+  .topic p {
+    font-size: 12px;
+  }
+
+  .tops span {
+    font-size: 20px;
+  }
+
+  .tops h3 {
+    font-size: 15px;
+  }
+
+  .grid_cards p {
+    font-size: 12px;
+  }
+
+  .grid_cards button {
+    padding: 6px 12px;
+    font-size: 12px;
   }
 }

@@ -1,33 +1,32 @@
 /* Repositories.css */
 
-/* Umumiy konteyner: Sidebar va repo'lar yonma-yon */
 .repositories-container {
   display: flex;
   align-items: flex-start;
   gap: 24px;
   padding: 2rem;
+  max-width: 1280px; /* Max width for consistency */
+  margin: 50px auto; /* Center the container */
 }
 
-/* Sidebar chapda qattiq width bilan */
 .profile-sidebar {
   width: 280px;
   position: relative;
-  top: -50;
+  top: -50px; /* Adjust as needed based on actual layout */
   left: 0;
   padding-top: 50px;
   height: 100%;
   overflow-y: auto;
-  background-color: transparent; /* sizda umumiy fonda rang bor bo‘lsa, bu joyda background-color yozmang */
+  background-color: transparent;
 }
 
-/* Repositoriyalarning grid dizayni */
 .repo-grid1 {
   flex: 1;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted for better initial fit */
   gap: 20px;
 }
 
-/* Har bir repository kartasi */
 .repo-card {
   background-color: #0d1117;
   color: #c9d1d9;
@@ -55,6 +54,7 @@
   justify-content: space-between;
   align-items: center;
   color: #58a6ff;
+  flex-wrap: wrap; /* Allow title to wrap */
 }
 
 .visibility {
@@ -64,6 +64,8 @@
   border: 1px solid #30363d;
   padding: 2px 6px;
   border-radius: 4px;
+  white-space: nowrap; /* Prevent wrapping */
+  margin-left: 8px; /* Space between title and visibility */
 }
 
 .repo-description {
@@ -71,6 +73,7 @@
   color: #c9d1d9;
   margin-bottom: 1rem;
   min-height: 50px;
+  flex-grow: 1; /* Allow description to take available space */
 }
 
 .repo-meta {
@@ -81,7 +84,6 @@
   margin-top: auto;
 }
 
-/* Rangli til nuqtalari */
 .language-color {
   width: 12px;
   height: 12px;
@@ -89,7 +91,6 @@
   display: inline-block;
 }
 
-/* Har bir tilga mos rang */
 .language-color.css {
   background-color: #563d7c;
 }
@@ -102,41 +103,118 @@
   background-color: #e34c26;
 }
 
-.language-name {
-  color: #8b949e;
-}
-
 /* Responsive holatlar */
 @media (max-width: 1024px) {
   .repositories-container {
     flex-direction: column;
     padding: 1rem;
-    margin: auto;
+    margin: 20px auto; /* Adjust margin for smaller screens */
   }
 
   .profile-sidebar {
     width: 100%;
     height: auto;
-    position: static;
+    position: static; /* Remove fixed positioning */
     padding: 20px 0;
+    top: auto; /* Reset top */
   }
 
   .repo-grid1 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min-width */
     padding: 0;
     margin: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .repo-title {
-    font-size: 1rem;
-  }
-
-  .repo-description {
-    font-size: 0.85rem;
   }
 
   .repo-card {
     padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .repo-grid1 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Further adjust min-width */
+  }
+
+  .repo-title {
+    font-size: 1rem;
+    flex-direction: column; /* Stack title and visibility */
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .visibility {
+    margin-left: 0; /* Remove left margin when stacked */
+  }
+
+  .repo-description {
+    font-size: 0.9rem;
+    min-height: unset; /* Allow height to be dynamic */
+  }
+
+  .repo-meta {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .repositories-container {
+    padding: 0.5rem; /* Reduced padding for very small screens */
+    margin: 10px auto;
+  }
+
+  .repo-grid1 {
+    grid-template-columns: 1fr; /* Single column for small mobile screens */
+    gap: 15px; /* Slightly less gap */
+  }
+
+  .repo-card {
+    padding: 0.8rem; /* Reduced card padding */
+  }
+
+  .repo-title {
+    font-size: 0.95rem;
+    align-items: center; /* Center items if stacked */
+  }
+
+  .visibility {
+    font-size: 0.75rem;
+    padding: 1px 5px;
+  }
+
+  .repo-description {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .repo-meta {
+    font-size: 0.8rem;
+    gap: 6px; /* Smaller gap */
+  }
+
+  .language-color {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .repositories-container {
+    padding: 0.3rem; /* Minimum padding */
+  }
+
+  .repo-card {
+    padding: 0.7rem;
+  }
+
+  .repo-title {
+    font-size: 0.9rem;
+  }
+
+  .repo-description {
+    font-size: 0.75rem;
+  }
+
+  .repo-meta {
+    font-size: 0.75rem;
   }
 }

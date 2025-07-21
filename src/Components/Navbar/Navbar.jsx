@@ -29,6 +29,7 @@ const Navbar = () => {
     <div className='header' data-aos="fade-down">
       <div className="header_container">
         <div className="left_box_navbar">
+          {/* Menu icon only visible on smaller screens */}
           <div className="menu_box" onClick={() => setShowMenu(!showMenu)}>
             <RiMenu2Fill />
           </div>
@@ -38,6 +39,7 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* These elements should always be visible on desktop */}
         <div className={`right_box_navbar ${showMenu ? 'show' : ''}`}>
           <div className="search_box">
             <FaSearch className='search' />
@@ -53,7 +55,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={`choices ${showMenu ? 'show' : ''}`} data-aos="fade-up">
+      {/* The 'choices' section. On desktop, it's always displayed. On mobile, it's toggled. */}
+      <div className={`choices ${showMenu ? 'show' : ''}`} data-aos="fade-up"> {/* Keep data-aos if you want the animation */}
         <Link to="/sidebar" className="oveview" onClick={handleLinkClick}>
           <span><IoBookOutline /></span><h3>Overview</h3>
         </Link>

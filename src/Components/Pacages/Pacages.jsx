@@ -30,7 +30,7 @@ const Pacages = () => {
         <div className="choose" data-aos="fade-up">
           <h2>Choose a registry</h2>
           <div className="girds">
-            <div className="grid_cards" data-aos="fade-right">
+            <div className="grid_cards" data-aos="fade-up">
               <div className="tops">
                 <span><GiFeather /></span>
                 <h3>Apache Maven</h3>
@@ -48,7 +48,7 @@ const Pacages = () => {
               <button>Learn more</button>
             </div>
 
-            <div className="grid_cards" data-aos="fade-left">
+            <div className="grid_cards" data-aos="fade-up">
               <div className="tops">
                 <span><SiRubygems /></span>
                 <h3>RubyGems</h3>
@@ -57,7 +57,7 @@ const Pacages = () => {
               <button>Learn more</button>
             </div>
 
-            <div className="grid_cards" data-aos="fade-up-right">
+            <div className="grid_cards" data-aos="fade-up">
               <div className="tops">
                 <span><CgNpm /></span>
                 <h3>npm</h3>
@@ -66,7 +66,7 @@ const Pacages = () => {
               <button>Learn more</button>
             </div>
 
-            <div className="grid_cards" data-aos="fade-up-left">
+            <div className="grid_cards" data-aos="fade-up">
               <div className="tops">
                 <span><GoContainer /></span>
                 <h3>Containers</h3>

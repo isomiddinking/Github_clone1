@@ -1,72 +1,101 @@
+/* Stars.css */
+
+/* Umumiy konteyner */
 .Stars {
   display: flex;
   align-items: flex-start;
   gap: 2rem;
   padding: 2rem;
   flex-wrap: wrap;
+  max-width: 1280px; /* Consistent max-width for overall layout */
+  margin: 50px auto; /* Center the container */
+  background-color: #0d1117; /* GitHub background color */
+  color: #c9d1d9; /* Default text color */
 }
 
+/* Yulduzlar konteyneri (main content area) */
 .Stars_container {
   flex: 1;
   min-width: 300px;
 }
 
+/* Yuqori qism: Listlar va saralash */
 .start_top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
   margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem; /* Add some padding at the bottom */
+  border-bottom: 1px solid #30363d; /* Separator line */
+}
+
+.start_top h3 {
+  font-size: 18px;
+  color: #c9d1d9;
+  margin: 0; /* Remove default margin */
 }
 
 .right_top {
   display: flex;
   gap: 15px;
   align-items: center;
+  flex-wrap: wrap; /* Allow buttons/text to wrap */
+}
+
+.right_top h3 {
+  font-size: 14px;
+  color: #8b949e; /* Lighter color for 'Sort' */
+  margin: 0; /* Remove default margin */
 }
 
 .right_top button {
   padding: 6px 14px;
-  background-color: rgb(0, 255, 115);
+  background-color: #238636; /* GitHub-like green button */
   color: white;
-  border: none;
+  border: 1px solid #30363d; /* Add border */
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .right_top button:hover {
-  background-color: rgb(0, 200, 90);
+  background-color: #2ea043; /* Darker green on hover */
+  border-color: #8b949e;
 }
 
+/* Yulduz kartasi (boshlang'ich holat) */
 .star_card {
   padding: 2rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #30363d; /* GitHub theme border */
+  background-color: #161b22; /* GitHub theme background */
   text-align: center;
   margin-bottom: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  color: #c9d1d9; /* Text color */
 }
 
 .star_icon {
   font-size: 40px;
   margin-bottom: 1rem;
-  color: #444;
+  color: #58a6ff; /* GitHub-like blue for icons */
 }
 
 .star_card h2 {
   font-size: 24px;
   margin-bottom: 0.5rem;
+  color: #c9d1d9; /* Heading color */
 }
 
 .star_card p {
   font-size: 16px;
-  color: #555;
+  color: #8b949e; /* Description text color */
 }
 
 .star_card p span {
-  color: rgb(68, 68, 251);
+  color: #58a6ff; /* Link color */
   cursor: pointer;
   font-weight: 500;
 }
@@ -75,40 +104,204 @@
   text-decoration: underline;
 }
 
-/* RESPONSIVE */
+/*
+---
+RESPONSIVE DESIGN STARTS HERE
+---
+*/
+
+/* 1024px va undan kichik ekranlar uchun */
 @media (max-width: 1024px) {
   .Stars {
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column; /* Stack sidebar and main content */
     align-items: center;
     padding: 1.5rem;
+    margin: 20px auto; /* Adjust margin */
+    gap: 1.5rem; /* Smaller gap */
+  }
+
+  /* Assuming ProfileSidebar is handled by its own CSS for responsiveness */
+  .profile-sidebar {
+    width: 100%;
+    position: static;
+    padding-top: 0;
+    height: auto;
+  }
+
+  .Stars_container {
+    min-width: unset; /* Allow container to shrink */
+    width: 100%; /* Take full width */
   }
 
   .start_top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    flex-direction: column; /* Stack elements in top section */
+    align-items: flex-start; /* Align to the left */
+    gap: 10px; /* Space between stacked items */
+    margin-bottom: 1rem;
   }
 
   .right_top {
-    justify-content: flex-start;
+    justify-content: flex-start; /* Align items to the start */
+    gap: 10px; /* Smaller gap */
+    width: 100%; /* Take full width */
   }
-}
 
-@media (max-width: 600px) {
   .right_top button {
-    width: 100%;
+    /* Maybe full width or a fixed max-width for balance */
+    max-width: 150px;
+    width: 100%; /* Ensure it takes available width up to max */
   }
 
   .star_card {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem; /* Slightly less padding */
+    margin-bottom: 1.5rem;
+  }
+
+  .star_card h2 {
+    font-size: 22px; /* Slightly smaller heading */
+  }
+
+  .star_icon {
+    font-size: 38px;
+  }
+}
+
+/* 768px va undan kichik ekranlar uchun */
+@media (max-width: 768px) {
+  .Stars {
+    padding: 1rem; /* Yana kamroq padding */
+    gap: 1rem;
+  }
+
+  .Stars_container {
+    padding: 10px; /* Yana kamroq padding */
+  }
+
+  .start_top {
+    gap: 8px;
+    margin-bottom: 0.8rem;
+  }
+
+  .start_top h3 {
+    font-size: 16px;
+  }
+
+  .right_top {
+    gap: 8px;
+  }
+
+  .right_top button {
+    padding: 5px 12px; /* Kichikroq tugma */
+    font-size: 13px;
+    max-width: 120px; /* Adjust max-width */
+  }
+
+  .star_card {
+    padding: 1.2rem; /* Yana kamroq padding */
+    margin-bottom: 1.2rem;
+  }
+
+  .star_icon {
+    font-size: 34px;
+    margin-bottom: 0.8rem;
   }
 
   .star_card h2 {
     font-size: 20px;
   }
 
+  .star_card p {
+    font-size: 15px;
+  }
+}
+
+/* 480px va undan kichik ekranlar uchun */
+@media (max-width: 480px) {
+  .Stars {
+    padding: 0.5rem; /* Eng kam padding */
+    margin: 10px auto; /* Adjust margin */
+    gap: 0.8rem;
+  }
+
+  .Stars_container {
+    padding: 5px; /* Eng kam padding */
+  }
+
+  .start_top {
+    flex-direction: column; /* Ensure stacking */
+    align-items: center; /* Center horizontally if stacked */
+    text-align: center;
+    gap: 5px;
+    margin-bottom: 0.6rem;
+  }
+
+  .start_top h3 {
+    font-size: 15px;
+  }
+
+  .right_top {
+    flex-direction: column; /* Stack 'Sort' and 'Create list' */
+    width: 100%;
+    gap: 5px;
+  }
+
+  .right_top h3 {
+    font-size: 12px;
+  }
+
+  .right_top button {
+    width: 100%; /* Full width button */
+    max-width: 200px; /* Constrain max width for aesthetics */
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .star_card {
+    padding: 1rem; /* Eng kam card padding */
+    margin-bottom: 1rem;
+  }
+
   .star_icon {
-    font-size: 36px;
+    font-size: 30px;
+    margin-bottom: 0.6rem;
+  }
+
+  .star_card h2 {
+    font-size: 18px;
+  }
+
+  .star_card p {
+    font-size: 14px;
+  }
+}
+
+/* 320px va undan kichik ekranlar (eng kichik mobil) */
+@media (max-width: 320px) {
+  .Stars {
+    padding: 0.2rem; /* Minimal padding */
+  }
+
+  .Stars_container {
+    padding: 2px; /* Minimal padding */
+  }
+
+  .start_top h3 {
+    font-size: 14px;
+  }
+
+  .star_card {
+    padding: 0.8rem;
+  }
+
+  .star_icon {
+    font-size: 26px;
+  }
+
+  .star_card h2 {
+    font-size: 16px;
+  }
+
+  .star_card p {
+    font-size: 13px;
   }
 }

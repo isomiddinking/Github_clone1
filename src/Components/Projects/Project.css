@@ -132,6 +132,9 @@
 @media (max-width: 600px) {
   .projects {
     padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .Ids,
