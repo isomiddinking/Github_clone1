@@ -23,7 +23,6 @@
 .repo-grid1 {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted for better initial fit */
   gap: 20px;
 }
 
